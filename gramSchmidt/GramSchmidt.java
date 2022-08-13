@@ -4,7 +4,6 @@ public class GramSchmidt {
 
     public static VectorSet gramSchmidt(Vector... vectors) {
         VectorSet currBasis = new VectorSet();
-        VectorSet copy = new VectorSet(vectors);
         for (Vector v_i : vectors) {
             Vector proj = Vector.projAOntoB(v_i, currBasis);
             Vector u_i = Vector.subtract(v_i, proj);
