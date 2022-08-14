@@ -5,7 +5,7 @@ import gramSchmidt.Vector;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class Tests {
+public class GramSchmidtTests {
 
     @Test
     public void threeVectors() {

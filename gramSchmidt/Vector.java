@@ -11,6 +11,10 @@ public class Vector {
         System.arraycopy(coords, 0, vals, 0, coords.length);
     }
 
+    public double get(int i) {
+        return vals[i];
+    }
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder("(");
