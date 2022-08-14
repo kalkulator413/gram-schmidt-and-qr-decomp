@@ -6,11 +6,6 @@ public class Vector {
 
     private double[] vals;
 
-//    public Vector (double[] coords) {
-//        vals = new double[coords.length];
-//        System.arraycopy(coords, 0, vals, 0, coords.length);
-//    }
-
     public Vector(double... coords) {
         vals = new double[coords.length];
         System.arraycopy(coords, 0, vals, 0, coords.length);
@@ -67,7 +62,7 @@ public class Vector {
     public static Vector scale(Vector v1, double scalar) {
         Vector result = zeroVector(v1.dimension());
         for (int i = 0; i < v1.dimension(); i ++) {
-            result.vals[i] = scalar * v1.vals[i];
+            result.vals[i] = Math.round(100 * scalar * v1.vals[i]) / 100.0;
         }
         return result;
     }

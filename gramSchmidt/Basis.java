@@ -18,6 +18,14 @@ public class Basis implements Iterable<Vector> {
         this.vectors = Arrays.asList(vectors);
     }
 
+    public int dimension() {
+        return vectors.size();
+    }
+
+    public boolean contains(Vector v) {
+        return vectors.contains(v);
+    }
+
     public Vector get(int index) {
         if (index >= vectors.size() || index < 0) {
             throw new IllegalArgumentException();
@@ -66,5 +74,22 @@ public class Basis implements Iterable<Vector> {
     @Override
     public Iterator<Vector> iterator() {
         return vectors.iterator();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Basis)) {
+            return false;
+        }
+        Basis b = (Basis) o;
+        if (b.dimension() != dimension()) {
+            return false;
+        }
+        for (Vector v : this) {
+            if (!b.contains(v)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
