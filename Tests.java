@@ -57,4 +57,16 @@ public class Tests {
         assertEquals(E_4, GramSchmidt.gramSchmidt(v1, v2, v3, v4));
     }
 
+    @Test
+    public void linearlyDependent() {
+        Vector v1 = new Vector(1, 0, 0, 0);
+        Vector v2 = new Vector(0, 1, 0, 0);
+        Vector v3 = new Vector(0, 0, 1, 0);
+        Vector v4 = new Vector(1, 1, 1, 0);
+        //not really a basis lol
+        Basis E_4 = new Basis(v1, v2, v3, Vector.zeroVector(4));
+
+        assertEquals(E_4, GramSchmidt.gramSchmidt(v1, v2, v3, v4));
+    }
+
 }
