@@ -6,16 +6,14 @@ public class Vector {
 
     private double[] vals;
 
-    public Vector (double[] coords) {
+//    public Vector (double[] coords) {
+//        vals = new double[coords.length];
+//        System.arraycopy(coords, 0, vals, 0, coords.length);
+//    }
+
+    public Vector(double... coords) {
         vals = new double[coords.length];
         System.arraycopy(coords, 0, vals, 0, coords.length);
-    }
-
-    public Vector(int... coords) {
-        vals = new double[coords.length];
-        for (int i = 0; i < coords.length; i ++) {
-            vals[i] = coords[i];
-        }
     }
 
     @Override
