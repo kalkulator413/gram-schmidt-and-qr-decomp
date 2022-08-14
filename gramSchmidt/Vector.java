@@ -62,7 +62,7 @@ public class Vector {
     public static Vector scale(Vector v1, double scalar) {
         Vector result = zeroVector(v1.dimension());
         for (int i = 0; i < v1.dimension(); i ++) {
-            result.vals[i] = Math.round(100 * scalar * v1.vals[i]) / 100.0;
+            result.vals[i] = Math.round(1000 * scalar * v1.vals[i]) / 1000.0;
         }
         return result;
     }
