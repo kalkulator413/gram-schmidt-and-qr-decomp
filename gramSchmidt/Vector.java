@@ -102,8 +102,8 @@ public class Vector {
         return scale(a, 1 / a.norm());
     }
 
-    public static Vector projAOntoB(Vector a, VectorSet V) {
-        VectorSet copy = new VectorSet(V);
+    public static Vector projAOntoB(Vector a, Basis V) {
+        Basis copy = new Basis(V);
         if (V.isEmpty()) {
             return zeroVector(a.dimension());
         }

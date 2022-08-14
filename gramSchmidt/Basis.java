@@ -2,19 +2,19 @@ package gramSchmidt;
 
 import java.util.*;
 
-public class VectorSet implements Iterable<Vector> {
+public class Basis implements Iterable<Vector> {
 
     public List<Vector> vectors;
 
-    public VectorSet() {
+    public Basis() {
         vectors = new ArrayList<>();
     }
 
-    public VectorSet (VectorSet V) {
+    public Basis(Basis V) {
         vectors = new ArrayList<>(V.vectors);
     }
 
-    public VectorSet (Vector... vectors) {
+    public Basis(Vector... vectors) {
         this.vectors = Arrays.asList(vectors);
     }
 
@@ -29,8 +29,8 @@ public class VectorSet implements Iterable<Vector> {
         return vectors == null || vectors.size() == 0;
     }
 
-    public static VectorSet span(Vector... vectors) {
-        VectorSet V = new VectorSet();
+    public static Basis span(Vector... vectors) {
+        Basis V = new Basis();
         V.vectors = Arrays.asList(vectors);
         return V;
     }
