@@ -21,7 +21,7 @@ public class Matrix {
 
     public Matrix[] QRDecomp() {
         Basis U = GramSchmidt.gramSchmidt(columns);
-        Vector[] newCols = new Vector[width];
+        Vector[] newCols = new Vector[U.dimension()];
         int counter = 0;
         for (Vector v : U) {
             newCols[counter] = v;

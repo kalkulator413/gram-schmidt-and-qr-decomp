@@ -7,7 +7,9 @@ public class GramSchmidt {
         for (Vector v_i : vectors) {
             Vector proj = Vector.projAOntoB(v_i, currBasis);
             Vector u_i = Vector.subtract(v_i, proj);
-            currBasis.add(u_i);
+            if (!u_i.equals(Vector.zeroVector(u_i.dimension()))) {
+                currBasis.add(u_i);
+            }
         }
         for (Vector v : currBasis) {
             v.normalize();

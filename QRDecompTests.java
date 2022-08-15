@@ -37,12 +37,11 @@ public class QRDecompTests {
 
         Vector q1 = new Vector(1, 0);
         Vector q2 = new Vector(0, 1);
-        Vector q3 = new Vector(0, 0);
-        assertEquals(QR[0], new Matrix(q1, q2, q3));
+        assertEquals(QR[0], new Matrix(q1, q2));
 
-        Vector r1 = new Vector(1, 0, 0);
-        Vector r2 = new Vector(3, 4, 0);
-        Vector r3 = new Vector(0, 1, 0);
+        Vector r1 = new Vector(1, 0);
+        Vector r2 = new Vector(3, 4);
+        Vector r3 = new Vector(0, 1);
         assertEquals(QR[1], new Matrix(r1, r2, r3));
 
         assertEquals(V, Matrix.multiply(QR[0], QR[1]));
